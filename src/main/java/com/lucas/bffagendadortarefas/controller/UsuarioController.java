@@ -85,7 +85,7 @@ public class UsuarioController {
     @ApiResponse(responseCode = "403", description = "Usuário não encontrado")
     @ApiResponse(responseCode = "500", description = "Erro de servidor")
     @ApiResponse(responseCode = "401", description = "Credenciais inválidas")
-    public ResponseEntity<EnderecoDTOResponse> atualizaEndereco(@RequestBody EnderecoDTOResquest dto,
+    public ResponseEntity<EnderecoDTOResponse> atualizaEndereco(@RequestBody EnderecoDTORequest dto,
                                                                 @RequestParam("id") Long id,
                                                                 @RequestHeader(value = "Authorization", required=false) String token){
         return ResponseEntity.ok(usuarioService.atualizaEndereco(id, dto, token));
@@ -111,7 +111,7 @@ public class UsuarioController {
     @ApiResponse(responseCode = "403", description = "Usuário não encontrado")
     @ApiResponse(responseCode = "500", description = "Erro de servidor")
     @ApiResponse(responseCode = "401", description = "Credenciais inválidas")
-    public ResponseEntity<EnderecoDTOResponse> cadastaEndereco(@RequestBody EnderecoDTOResquest dto,
+    public ResponseEntity<EnderecoDTOResponse> cadastaEndereco(@RequestBody EnderecoDTORequest dto,
                                                                @RequestHeader(value = "Authorization", required=false) String token){
         return ResponseEntity.ok(usuarioService.cadastraEndereco(token, dto));
     }
